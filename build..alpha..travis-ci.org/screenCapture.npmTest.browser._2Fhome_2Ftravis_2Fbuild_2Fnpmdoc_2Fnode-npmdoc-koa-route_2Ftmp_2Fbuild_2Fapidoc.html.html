@@ -1,0 +1,1908 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/koajs/route#readme">koa-route (v3.2.0)</a>
+</h1>
+<h4>Koa route middleware</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.koa-route">module koa-route</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.acl">
+            function <span class="apidocSignatureSpan">koa-route.</span>acl
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.all">
+            function <span class="apidocSignatureSpan">koa-route.</span>all
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.bind">
+            function <span class="apidocSignatureSpan">koa-route.</span>bind
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.checkout">
+            function <span class="apidocSignatureSpan">koa-route.</span>checkout
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.connect">
+            function <span class="apidocSignatureSpan">koa-route.</span>connect
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.copy">
+            function <span class="apidocSignatureSpan">koa-route.</span>copy
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.del">
+            function <span class="apidocSignatureSpan">koa-route.</span>del
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.delete">
+            function <span class="apidocSignatureSpan">koa-route.</span>delete
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.get">
+            function <span class="apidocSignatureSpan">koa-route.</span>get
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.head">
+            function <span class="apidocSignatureSpan">koa-route.</span>head
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.link">
+            function <span class="apidocSignatureSpan">koa-route.</span>link
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.lock">
+            function <span class="apidocSignatureSpan">koa-route.</span>lock
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.m-search">
+            function <span class="apidocSignatureSpan">koa-route.</span>m-search
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.merge">
+            function <span class="apidocSignatureSpan">koa-route.</span>merge
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.mkactivity">
+            function <span class="apidocSignatureSpan">koa-route.</span>mkactivity
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.mkcalendar">
+            function <span class="apidocSignatureSpan">koa-route.</span>mkcalendar
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.mkcol">
+            function <span class="apidocSignatureSpan">koa-route.</span>mkcol
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.move">
+            function <span class="apidocSignatureSpan">koa-route.</span>move
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.notify">
+            function <span class="apidocSignatureSpan">koa-route.</span>notify
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.options">
+            function <span class="apidocSignatureSpan">koa-route.</span>options
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.patch">
+            function <span class="apidocSignatureSpan">koa-route.</span>patch
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.post">
+            function <span class="apidocSignatureSpan">koa-route.</span>post
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.propfind">
+            function <span class="apidocSignatureSpan">koa-route.</span>propfind
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.proppatch">
+            function <span class="apidocSignatureSpan">koa-route.</span>proppatch
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.purge">
+            function <span class="apidocSignatureSpan">koa-route.</span>purge
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.put">
+            function <span class="apidocSignatureSpan">koa-route.</span>put
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.rebind">
+            function <span class="apidocSignatureSpan">koa-route.</span>rebind
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.report">
+            function <span class="apidocSignatureSpan">koa-route.</span>report
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.search">
+            function <span class="apidocSignatureSpan">koa-route.</span>search
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.subscribe">
+            function <span class="apidocSignatureSpan">koa-route.</span>subscribe
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.trace">
+            function <span class="apidocSignatureSpan">koa-route.</span>trace
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.unbind">
+            function <span class="apidocSignatureSpan">koa-route.</span>unbind
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.unlink">
+            function <span class="apidocSignatureSpan">koa-route.</span>unlink
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.unlock">
+            function <span class="apidocSignatureSpan">koa-route.</span>unlock
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.koa-route.unsubscribe">
+            function <span class="apidocSignatureSpan">koa-route.</span>unsubscribe
+            <span class="apidocSignatureSpan">(path, fn, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.koa-route" id="apidoc.module.koa-route">module koa-route</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.acl" id="apidoc.element.koa-route.acl">
+        function <span class="apidocSignatureSpan">koa-route.</span>acl
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">acl = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.all" id="apidoc.element.koa-route.all">
+        function <span class="apidocSignatureSpan">koa-route.</span>all
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">all = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.bind" id="apidoc.element.koa-route.bind">
+        function <span class="apidocSignatureSpan">koa-route.</span>bind
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">bind = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.checkout" id="apidoc.element.koa-route.checkout">
+        function <span class="apidocSignatureSpan">koa-route.</span>checkout
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">checkout = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.connect" id="apidoc.element.koa-route.connect">
+        function <span class="apidocSignatureSpan">koa-route.</span>connect
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">connect = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.copy" id="apidoc.element.koa-route.copy">
+        function <span class="apidocSignatureSpan">koa-route.</span>copy
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">copy = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.del" id="apidoc.element.koa-route.del">
+        function <span class="apidocSignatureSpan">koa-route.</span>del
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.delete" id="apidoc.element.koa-route.delete">
+        function <span class="apidocSignatureSpan">koa-route.</span>delete
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">delete = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.get" id="apidoc.element.koa-route.get">
+        function <span class="apidocSignatureSpan">koa-route.</span>get
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+# koa-route
+
+ Uber simple route middleware for koa.
+
+```js
+var _ = require('koa-route');
+app.use(_.<span class="apidocCodeKeywordSpan">get</span>('/pets', pets.list));
+app.use(_.get('/pets/:name', pets.show));
+```
+
+ If you need a full-featured solution check out [koa-router](https://github.com/alexmingoia/koa-router),
+ a Koa clone of express-resource.
+
+## Installation
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.head" id="apidoc.element.koa-route.head">
+        function <span class="apidocSignatureSpan">koa-route.</span>head
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">head = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.link" id="apidoc.element.koa-route.link">
+        function <span class="apidocSignatureSpan">koa-route.</span>link
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">link = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.lock" id="apidoc.element.koa-route.lock">
+        function <span class="apidocSignatureSpan">koa-route.</span>lock
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">lock = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.m-search" id="apidoc.element.koa-route.m-search">
+        function <span class="apidocSignatureSpan">koa-route.</span>m-search
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">m-search = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.merge" id="apidoc.element.koa-route.merge">
+        function <span class="apidocSignatureSpan">koa-route.</span>merge
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">merge = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.mkactivity" id="apidoc.element.koa-route.mkactivity">
+        function <span class="apidocSignatureSpan">koa-route.</span>mkactivity
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkactivity = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.mkcalendar" id="apidoc.element.koa-route.mkcalendar">
+        function <span class="apidocSignatureSpan">koa-route.</span>mkcalendar
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkcalendar = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.mkcol" id="apidoc.element.koa-route.mkcol">
+        function <span class="apidocSignatureSpan">koa-route.</span>mkcol
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">mkcol = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.move" id="apidoc.element.koa-route.move">
+        function <span class="apidocSignatureSpan">koa-route.</span>move
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">move = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.notify" id="apidoc.element.koa-route.notify">
+        function <span class="apidocSignatureSpan">koa-route.</span>notify
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">notify = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.options" id="apidoc.element.koa-route.options">
+        function <span class="apidocSignatureSpan">koa-route.</span>options
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">options = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.patch" id="apidoc.element.koa-route.patch">
+        function <span class="apidocSignatureSpan">koa-route.</span>patch
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">patch = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.post" id="apidoc.element.koa-route.post">
+        function <span class="apidocSignatureSpan">koa-route.</span>post
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">post = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.propfind" id="apidoc.element.koa-route.propfind">
+        function <span class="apidocSignatureSpan">koa-route.</span>propfind
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">propfind = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.proppatch" id="apidoc.element.koa-route.proppatch">
+        function <span class="apidocSignatureSpan">koa-route.</span>proppatch
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">proppatch = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.purge" id="apidoc.element.koa-route.purge">
+        function <span class="apidocSignatureSpan">koa-route.</span>purge
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">purge = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.put" id="apidoc.element.koa-route.put">
+        function <span class="apidocSignatureSpan">koa-route.</span>put
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">put = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.rebind" id="apidoc.element.koa-route.rebind">
+        function <span class="apidocSignatureSpan">koa-route.</span>rebind
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rebind = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.report" id="apidoc.element.koa-route.report">
+        function <span class="apidocSignatureSpan">koa-route.</span>report
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">report = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.search" id="apidoc.element.koa-route.search">
+        function <span class="apidocSignatureSpan">koa-route.</span>search
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">search = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.subscribe" id="apidoc.element.koa-route.subscribe">
+        function <span class="apidocSignatureSpan">koa-route.</span>subscribe
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">subscribe = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.trace" id="apidoc.element.koa-route.trace">
+        function <span class="apidocSignatureSpan">koa-route.</span>trace
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">trace = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.unbind" id="apidoc.element.koa-route.unbind">
+        function <span class="apidocSignatureSpan">koa-route.</span>unbind
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unbind = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.unlink" id="apidoc.element.koa-route.unlink">
+        function <span class="apidocSignatureSpan">koa-route.</span>unlink
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unlink = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.unlock" id="apidoc.element.koa-route.unlock">
+        function <span class="apidocSignatureSpan">koa-route.</span>unlock
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unlock = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.koa-route.unsubscribe" id="apidoc.element.koa-route.unsubscribe">
+        function <span class="apidocSignatureSpan">koa-route.</span>unsubscribe
+        <span class="apidocSignatureSpan">(path, fn, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">unsubscribe = function (path, fn, opts){
+  const re = pathToRegexp(path, opts);
+  debug('%s %s -&gt; %s', method || 'ALL', path, re);
+
+  const createRoute = function(routeFunc){
+    return function (ctx, next){
+      // method
+      if (!matches(ctx, method)) return next();
+
+      // path
+      const m = re.exec(ctx.path);
+      if (m) {
+        const args = m.slice(1).map(decode);
+        ctx.routePath = path;
+        debug('%s %s matches %s %j', ctx.method, path, ctx.path, args);
+        args.unshift(ctx);
+        args.push(next);
+        return Promise.resolve(routeFunc.apply(ctx, args));
+      }
+
+      // miss
+      return next();
+    }
+  };
+
+  if (fn) {
+    return createRoute(fn);
+  } else {
+    return createRoute;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
