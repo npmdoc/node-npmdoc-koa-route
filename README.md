@@ -1,6 +1,6 @@
 # npmdoc-koa-route
 
-#### api documentation for  [koa-route (v3.2.0)](https://github.com/koajs/route#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-koa-route.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-koa-route) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-koa-route.svg)](https://travis-ci.org/npmdoc/node-npmdoc-koa-route)
+#### basic api documentation for  [koa-route (v3.2.0)](https://github.com/koajs/route#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-koa-route.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-koa-route) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-koa-route.svg)](https://travis-ci.org/npmdoc/node-npmdoc-koa-route)
 
 #### Koa route middleware
 
@@ -98,7 +98,8 @@
         "test-cov": "NODE_ENV=test node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha -- --require should",
         "test-travis": "NODE_ENV=test node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha --report lcovonly -- --require should"
     },
-    "version": "3.2.0"
+    "version": "3.2.0",
+    "bin": {}
 }
 ```
 
